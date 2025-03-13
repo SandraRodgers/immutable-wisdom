@@ -29,7 +29,15 @@ jobs:
         with:
           payload: |
             {
-              "text": ":owl: *${{ env.TITLE }}*\n${{ env.CONTENT }}"
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":owl: *${{ env.TITLE }}*\n\n${{ env.CONTENT }}"
+                  }
+                }
+              ]
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
