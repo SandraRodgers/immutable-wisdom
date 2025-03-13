@@ -1,0 +1,202 @@
+[
+    {
+      "title": "Parse, don't validate.",
+      "content": "Instead of checking if input is valid and then converting it, attempt to parse it directly into the desired type, returning `Nothing` if invalid."
+    },
+    {
+      "title": "Make impossible states impossible.",
+      "content": "Use Elm's type system to represent only valid states, preventing invalid ones from occurring in the first place."
+    },
+    {
+      "title": "Design with messages, not mutations.",
+      "content": "Instead of mutating state directly, define messages that describe what should change and let the `update` function handle it."
+    },
+    {
+      "title": "Let the compiler guide you.",
+      "content": "Trust Elm's type system and compiler errors to steer you toward correct, maintainable code."
+    },
+    {
+      "title": "Types as documentation.",
+      "content": "Well-designed type signatures should clearly express a function's purpose without needing additional comments."
+    },
+    {
+      "title": "Prefer composition over inheritance.",
+      "content": "Build functionality by composing small functions rather than relying on deep structures or hierarchical patterns."
+    },
+    {
+      "title": "Single source of truth.",
+      "content": "Store state in one place (typically `Model`) and derive everything else from it."
+    },
+    {
+      "title": "Use opaque types to enforce invariants.",
+      "content": "Hide implementation details by exposing only a type and smart constructors to ensure correct usage."
+    },
+    {
+      "title": "No runtime exceptions.",
+      "content": "Elm guarantees safety at runtime, so avoid patterns that introduce unnecessary risks like `Debug.crash`."
+    },
+    {
+      "title": "Be explicit with data modeling.",
+      "content": "Use custom types instead of generic types like `String` or `Int` when possible to make intent clear."
+    },
+    {
+      "title": "Separate concerns with TEA (The Elm Architecture).",
+      "content": "Keep `Model`, `Msg`, and `update` functions well-structured to maintain clarity and predictability."
+    },
+    {
+      "title": "Use records for structured data, tuples for ad hoc grouping.",
+      "content": "Records improve readability and maintainability, while tuples are best for small, temporary groupings."
+    },
+    {
+      "title": "Minimize side effects.",
+      "content": "Push side effects to commands (`Cmd`) and subscriptions (`Sub`) instead of handling them inline."
+    },
+    {
+      "title": "Decouple UI from business logic.",
+      "content": "Keep UI-specific code separate from core logic to improve testability and maintainability."
+    },
+    {
+      "title": "Model data transformations, not imperative steps.",
+      "content": "Instead of writing step-by-step procedures, focus on how data flows and transforms through pure functions."
+    },
+    {
+      "title": "Keep functions pure.",
+      "content": "Avoid functions that rely on external state or have side effects; instead, return predictable outputs for given inputs."
+    },
+    {
+      "title": "Use JSON decoders for safe data handling.",
+      "content": "When working with external data (like API responses), always use decoders to ensure valid structures."
+    },
+    {
+      "title": "Limit the use of `Maybe` and `Result` at the edges.",
+      "content": "Keep optional or error-prone values at the edges of your system, converting them to reliable types as early as possible."
+    },
+    {
+      "title": "Design for clarity, not cleverness.",
+      "content": "Write simple, readable code rather than over-engineered solutions that require deep understanding."
+    },
+    {
+      "title": "Write small, reusable functions.",
+      "content": "Break down large functions into smaller, reusable pieces that each do one thing well."
+    },
+    {
+      "title": "Derive state instead of storing it.",
+      "content": "If you can calculate a value from existing state, do so instead of storing an extra field in `Model`."
+    },
+    {
+      "title": "Handle all cases explicitly.",
+      "content": "Use pattern matching to cover all possible cases rather than relying on default fallbacks."
+    },
+    {
+      "title": "Use pipelines to improve readability.",
+      "content": "Chain function calls in a logical order using the `|>` operator instead of deeply nested expressions."
+    },
+    {
+      "title": "Avoid overuse of flags and boolean parameters.",
+      "content": "Use descriptive types instead of booleans to clarify intent."
+    },
+    {
+      "title": "Make error states part of your model.",
+      "content": "Instead of ignoring potential errors, explicitly represent them in the `Model` and handle them gracefully."
+    },
+    {
+      "title": "Update the model first, then trigger effects.",
+      "content": "Always modify state first in the `update` function before deciding what commands (`Cmd`) to execute."
+    },
+    {
+      "title": "Trust immutability.",
+      "content": "Elm enforces immutability, so embrace it to avoid unintended side effects."
+    },
+    {
+      "title": "Use custom types for domain logic.",
+      "content": "Model domain-specific concepts with custom types to prevent incorrect usage."
+    },
+    {
+      "title": "Organize code by feature, not file type.",
+      "content": "Instead of separating files by `Model`, `View`, and `Update`, group related code together by feature."
+    },
+    {
+      "title": "Use type aliases for readability, not shortcuts.",
+      "content": "Type aliases should make code more understandable, not just replace long type signatures."
+    },
+    {
+      "title": "Keep `update` functions simple.",
+      "content": "The `update` function should focus on modifying the model and returning commands, without complex logic."
+    },
+    {
+      "title": "Think in terms of transformations, not mutations.",
+      "content": "Data should be transformed through functions instead of being directly modified."
+    },
+    {
+      "title": "Avoid deeply nested structures.",
+      "content": "Flatten data structures where possible to make updates and access easier."
+    },
+    {
+      "title": "Test behavior, not implementation details.",
+      "content": "Write tests that verify expected outcomes rather than internal implementation specifics."
+    },
+    {
+      "title": "Embrace Elm's constraints.",
+      "content": "Instead of fighting Elm's limitations, work within them to build robust, maintainable code."
+    },
+    {
+      "title": "Refactor aggressively, but safely.",
+      "content": "Use Elm's compiler guarantees to refactor confidently, knowing that type errors will guide you."
+    },
+    {
+      "title": "Prefer small modules over monolithic files.",
+      "content": "Keep codebases maintainable by organizing modules logically rather than cramming everything into one file."
+    },
+    {
+      "title": "Encapsulate logic inside modules.",
+      "content": "Use modules to group related logic and prevent unnecessary exposure of internal details."
+    },
+    {
+      "title": "Think declaratively, not imperatively.",
+      "content": "Describe what should happen rather than how it should happen."
+    },
+    {
+      "title": "Reduce boilerplate with smart defaults.",
+      "content": "Provide sensible defaults in functions to avoid excessive parameter passing."
+    },
+    {
+      "title": "Write error messages for humans, not just computers.",
+      "content": "When handling errors, provide meaningful messages instead of cryptic codes."
+    },
+    {
+      "title": "Defer decisions until necessary.",
+      "content": "Avoid premature optimization or design choices that may not be needed."
+    },
+    {
+      "title": "Prefer explicit over implicit dependencies.",
+      "content": "Pass dependencies explicitly rather than relying on hidden context."
+    },
+    {
+      "title": "Encourage immutability everywhere, even in UI state.",
+      "content": "Avoid storing state in UI components when it belongs in the `Model`."
+    },
+    {
+      "title": "Model intent, not just data.",
+      "content": "When defining types, consider what they represent and how they should be used."
+    },
+    {
+      "title": "Elm's enforced purity is an advantage, not a limitation.",
+      "content": "Treat Elm's lack of side effects as a feature that ensures predictable behavior."
+    },
+    {
+      "title": "Model complex UI flows with state machines.",
+      "content": "Use custom types to represent state transitions explicitly instead of managing flags."
+    },
+    {
+      "title": "Separate effects from core logic.",
+      "content": "Keep API calls, local storage, and other side effects in separate modules where possible."
+    },
+    {
+      "title": "Write function signatures first, then implement.",
+      "content": "Defining the type signature before implementation helps clarify intent."
+    },
+    {
+      "title": "Be patient with Elm's learning curve—it pays off.",
+      "content": "Elm enforces best practices by design, and the effort to learn it results in cleaner, more reliable code."
+    }
+  ]

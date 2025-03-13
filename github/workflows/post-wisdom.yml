@@ -1,0 +1,35 @@
+name: Post Weekly Wisdom to Slack
+
+on:
+  schedule:
+    - cron: "0 17 * * 4" # Runs every Thursday at 12 PM CT (standard time)
+
+jobs:
+  post_wisdom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Select wisdom
+        id: wisdom
+        run: |
+          WISDOM=$(cat post-wisdom.json)
+          TOTAL_CARDS=$(echo $WISDOM | jq 'length')
+          WEEK_NUM=$(date +%U | awk '{print $1 % '$TOTAL_CARDS'}')
+          SELECTED=$(echo $WISDOM | jq '.['$WEEK_NUM']')
+          TITLE=$(echo $SELECTED | jq -r '.title')
+          CONTENT=$(echo $SELECTED | jq -r '.content')
+          echo "TITLE=$TITLE" >> $GITHUB_ENV
+          echo "CONTENT=$CONTENT" >> $GITHUB_ENV
+
+      - name: Send to Slack
+        uses: slackapi/slack-github-action@v1.24
+        with:
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          payload: |
+            {
+              "text": "*Immutable Wisdom* :owl: :elm:\n\n*${TITLE}*\n${CONTENT}"
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
