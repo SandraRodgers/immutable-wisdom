@@ -3,7 +3,7 @@ name: Post Weekly Wisdom to Slack
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 17 * * 4" # Runs every Thursday at 12 PM CT (standard time)
+    - cron: "* * * * *" # Runs every minute
 
 jobs:
   post_wisdom:
@@ -29,7 +29,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "*Immutable Wisdom* :owl: :elm:\n\n*${TITLE}*\n${CONTENT}"
+              "text": ":owl:*${TITLE}*\n${CONTENT}"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
