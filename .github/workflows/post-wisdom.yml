@@ -15,7 +15,7 @@ jobs:
       - name: Select wisdom
         id: wisdom
         run: |
-          WISDOM=$(cat post-wisdom.json)
+          WISDOM=$(cat elm-wisdom.json)
           TOTAL_CARDS=$(echo $WISDOM | jq 'length')
           WEEK_NUM=$(date +%U | awk '{print $1 % '$TOTAL_CARDS'}')
           SELECTED=$(echo $WISDOM | jq '.['$WEEK_NUM']')
