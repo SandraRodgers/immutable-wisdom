@@ -3,7 +3,7 @@ name: Post Weekly Wisdom to Slack
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 12 * * 4" # Runs at 12:30 PM every Thursday
+    - cron: "00 18 * * 4" # Runs at 1:00 PM CT (during standard time)
 
 jobs:
   post_wisdom:
