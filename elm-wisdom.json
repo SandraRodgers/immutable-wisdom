@@ -41,7 +41,7 @@
     },
     {
       "title": "Parse, don't validate.",
-      "content": "Instead of checking if input is valid and then converting it, attempt to parse it directly into the desired type, returning `Nothing` if invalid."
+      "content": "Instead of checking if input is valid and then converting it, attempt to parse it directly into the desired type, returning Nothing if invalid."
     },
     {
       "title": "Make impossible states impossible.",
