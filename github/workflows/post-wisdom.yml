@@ -1,6 +1,7 @@
 name: Post Weekly Wisdom to Slack
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 17 * * 4" # Runs every Thursday at 12 PM CT (standard time)
 
@@ -26,10 +27,9 @@ jobs:
       - name: Send to Slack
         uses: slackapi/slack-github-action@v1.24
         with:
-          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           payload: |
             {
               "text": "*Immutable Wisdom* :owl: :elm:\n\n*${TITLE}*\n${CONTENT}"
             }
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
