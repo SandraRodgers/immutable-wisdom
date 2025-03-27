@@ -48,8 +48,8 @@
       "content": "Use Elm's type system to represent only valid states, preventing invalid ones from occurring in the first place."
     },
     {
-      "title": "Design with messages, not mutations.",
-      "content": "Instead of mutating state directly, define messages that describe what should change and let the update function handle it."
+      "title": "Design with messages, not embedded updates.",
+      "content": "Instead of updating state within event listeners or views, send a message that describes what happened, and update the model in the update function. This keeps state transitions centralized, predictable, and testable."
     },
     {
       "title": "Let the compiler guide you.",
@@ -190,6 +190,10 @@
     {
       "title": "Encapsulate logic inside modules.",
       "content": "Use modules to group related logic and prevent unnecessary exposure of internal details."
+    },
+    {
+      "title": "A function should do one thing well.",
+      "content": "Keep functions small, focused, and pure. Each function should perform a single task, making code easier to read, test, and reuse."
     },
     {
       "title": "Think declaratively, not imperatively.",
