@@ -60,8 +60,8 @@
       "content": "Well-designed type signatures should clearly express a function's purpose without needing additional comments."
     },
     {
-      "title": "Prefer composition over inheritance.",
-      "content": "Build functionality by composing small functions rather than relying on deep structures or hierarchical patterns."
+      "title": "Prefer focused, reusable functions over large, single-purpose ones.",
+      "content": "Build logic by combining small functions for clarity, reuse, and simplicity."
     },
     {
       "title": "Single source of truth.",
@@ -198,5 +198,9 @@
     {
       "title": "Think declaratively, not imperatively.",
       "content": "Describe what should happen rather than how it should happen."
+    },
+    {
+      "title": "Use |> and >> to write clearer code.",
+      "content": "Pipelines and function composition let you build logic step-by-step without nesting or repetition."
     }
   ]
